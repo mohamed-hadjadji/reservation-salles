@@ -1,0 +1,267 @@
+#bodi{
+	background-color: white;
+}
+#bodya{
+background:url("img/background-index.jpg")top left/100% 100% ;
+background-attachment:fixed;
+width: 100%;
+margin: 0px;
+}
+/*barre nav*/
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+
+#menu{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	background-color: rgba(0, 0, 0, 0.70);
+    margin-top: 30px;
+	height: 90px;
+
+}
+.nav1{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 53%;
+
+}
+.img1{
+margin-left: 25px;
+margin-top: -20px;
+height: 170px;
+}
+.img2{
+margin-top: -26px;
+height: 150px;
+}
+.img2:hover{
+margin-top: -40px;
+height:	180px;
+}
+.nav2{
+
+	display: flex;
+	flex-direction: row;
+	margin-top: 6px;
+	margin-right: 25px;
+    margin: 0 auto;
+	text-align: center;
+}
+
+.nav2 a
+{
+
+    color: white;
+    text-decoration: none;
+    font-family: 'Candara';
+    font-size: 20px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+	margin-left: 40px;
+}
+.nav2 a:hover{
+   color:#F73307;
+}
+
+.nav2 a:before, .nav2 a:after
+{
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border: 4px solid #F13939;
+    transform: translateX(-50%) translateY(-50%) scale(0.8);
+    border-radius: 50%;
+    background: transparent;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+.nav2 a:after
+{
+    border-width: 2px;
+    transition: all 0.4s;
+}
+
+.nav2 a:hover:before
+{
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10%) scale(1);
+}
+
+.nav2 a:hover:after
+{
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10%) scale(1.5);
+}
+
+/*page index*/
+button {
+  background-color: rgba(161, 17, 12, 0.8);
+  color: white;
+  font-family: 'Impact';
+  font-size: 25px;
+  border-radius: 25px;
+  padding: 15px;
+  margin: 70px;
+  margin-left: 700px;
+  cursor: pointer;
+  width: 500px;
+ 
+}
+button:hover {
+   background-color: rgba(161, 17, 12, 1);
+}
+header h3{
+
+	text-align: right;
+	margin-right: 20px;
+	font: 20px Consolas;
+}
+header h3 u{
+
+	color: #96390D;
+}
+section{
+	width: 100%;
+}
+#tache1{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	
+}
+#picture1{
+	display: flex;
+	flex-direction: row;
+	animation: anim_postx 8s
+}
+@keyframes anim_postx{
+
+from {
+transform: translatex(200%)
+}
+to {
+
+transform: translatex(0%)
+
+}
+}
+#tache2{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 100%;
+
+}
+#picture2{
+	display: flex;
+	flex-direction: row;
+	animation: anim_post 8s 
+}
+@keyframes anim_post{
+
+from {
+transform: translatex(-200%)
+}
+to {
+
+transform: translatex(0%)
+
+}
+}
+.pic1, .pic2, .pic3, .pic4, .pic5, .pic6{
+	border-style:solid;
+	border-radius: 15px;
+	width: 370px;
+	height: 270px;
+	margin: 20px;
+	margin-right: 5px;
+
+}
+#picture1 p,#picture2 p{
+	font: 26px Courier New;
+	color: white;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.70);
+	margin-top: 50%;
+
+}
+.pic1{
+	background:url("img/paintball-enfant.jpg")top left / 100% 100%;
+}
+.pic2{
+	background:url("img/paintball1.jpg")top left / 100% 100%;
+}
+.pic3{
+	background:url("img/paintball-anniv.jpg")top left / 100% 100%;
+}
+.pic4{
+	background:url("img/paintball-famille.jpg")top left / 100% 100%;
+}
+.pic5{
+	background:url("img/paintball2.png")top left / 100% 100%;
+}
+.pic6{
+	background:url("img/paintball3.jpg")top left / 100% 100%;
+}
+
+#present{
+	background-color: rgba(161, 17, 12, 0.58);
+	text-align: center;
+	border-radius: 20px;
+	width: 50%;
+	margin-left: 23%;
+	padding: 30px;
+
+	
+}
+#present h1, #video h1{
+	color: white;
+	font: 40px Courier New;
+	margin: 0px;
+}
+#present h3,#video h3{
+	color: #E8BF66;
+	margin-top: 3px;
+	font: 18px Courier New;	
+}
+#present h2{
+    font: 45px Candara;
+    color: #F3DA74;
+}
+#para{
+	display: flex;
+	flex-direction: row;
+}
+.text {
+	color: white;
+	font-family: 'Candara';
+	font-size: 18px;
+	text-align: left;
+	margin: 25px;
+}
+.text u{
+	color: #E8BF66;
+}
+#video{
+	
+	text-align: center;
+	margin-top: 150px;
+}
+.deco{
+	background-color: rgba(161, 17, 12, 0.8);
+	border-radius: 50px;
+	width: 30%;
+	margin-left: 35%;
+	margin-bottom: 30px;
+	padding: 10px;
+
+
+}
+
