@@ -101,7 +101,7 @@ height:	180px;
 }
 
 /*page index*/
-button {
+.reserver {
   background-color: rgba(161, 17, 12, 0.8);
   color: white;
   font-family: 'Impact';
@@ -114,7 +114,7 @@ button {
   width: 500px;
  
 }
-button:hover {
+.reserver:hover {
    background-color: rgba(161, 17, 12, 1);
 }
 header h3{
@@ -263,5 +263,10 @@ transform: translatex(0%)
 	padding: 10px;
 
 
+}
+footer{
+	background-color: rgba(0, 0, 0, 0.70);
+	color:white;
+	text-align: center;
 }
 
