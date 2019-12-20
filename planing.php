@@ -47,14 +47,16 @@ var_dump($resultat);
  	
  					foreach ($resultat as $resultat2) {
  						$heure=date("G" , strtotime($resultat2[3]));
+ 						$heure2=date("G" , strtotime($resultat2[4]));
  						 // echo "$heure<br />";
  						// echo "limite";
  						$jour2=date("w" , strtotime($resultat2[3]));
  						// echo "$jour2<br />";
 
- 						if($jour==$jour2 && $h==$heure)
+ 						if($jour==$jour2 && $h>=$heure && $h <=$heure2)
  						{
- 							echo "ok event";
+ 							
+ 							echo "$resultat2[1]";
  						}
  						
  					}
