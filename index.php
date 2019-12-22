@@ -105,7 +105,7 @@ $user = $_SESSION['login'];
       <div id="para">
         <div class="text">
           <p>Le plus grand site de Paintball 13 de la Région PACA (Bouches du Rhône ) vous accueille tous les jours, sur RESERVATION, sur ses 35 hectares de terrains boisés et entièrement sécurisés pour des moments 100% Adrénaline.</p>
-          <h4><b> 7/7 - 365/an - UNIQUEMENT SUR RÉSERVATION - </b></h4>
+          <h4><b>- UNIQUEMENT SUR RÉSERVATION - </b></h4>
           <p><b>Paintball Marseille</b> organise des parties de paintball pour des" petits" de 6 à 10 ans et pour des "grands" Adultes 10 ans et +</p>
         </div>
         <div class="text">
@@ -121,6 +121,14 @@ $user = $_SESSION['login'];
       <iframe width="1300" height="600" src="https://www.youtube.com/embed/mGI5ZxCVVXA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </article>
   </section>
-  <footer></footer>
+  <footer>
+    <h2><b>Contact</b></h2>
+    <h3>TERRAIN PAINTBALL MARSEILLE</h3>
+    <p>15 Chemin du bois de l’Aumône - Via D4A EOURES
+13011 Marseille</p>
+    <p>Téléphone : <b>04 69 00 16 84</b></p>
+    <a href="https://www.paintballmarseille.com/site/pdf/INVIT%20ANNIV%203.pdf"> <button type="button" class="contact">TELECHARGER VOTRE INVITATION</button></a>
+    <a href="https://www.google.fr/maps/dir/IKEA+Marseille+La+Valentine,+ZAC+la+Ravelle,+Avenue+Fran%C3%A7ois+Chardigny,+13011+Marseille/Chemin+du+Bois+de+l'Aum%C3%B4ne,+13011+Marseille/@43.2925951,5.4851795,14z/data=!4m15!4m14!1m5!1m1!1s0xd552856d05bc761:0x571bcb03362f186a!2m2!1d5.480252!2d43.293167!1m5!1m1!1s0x12c9bcf4cf807b1b:0x996fe742a9f9e5f2!2m2!1d5.5232904!2d43.2933535!3e0!5i2"> <button type="button" class="contact">Plan d'accés</button></a>
+  </footer>
 </body>
 </html>

@@ -4,7 +4,7 @@
         <link rel="stylesheet" type="text/css" href="reservation.css">
     <title>Connexion</title>
 </head>
-<body>
+<body class="bodyc">
 
 	<header>
 		<nav id="menu">
@@ -56,7 +56,8 @@
         }
     }
     ?>
-     <form action="" method="GET">
+    <section class="form">
+        <form action="" method="GET">
                 <h2>Connexion</h2>
                 
                 <label><b>LOGIN</b></label>
@@ -80,4 +81,5 @@
                 }
                 
                 ?>
-     </form>
+        </form>
+    </section>

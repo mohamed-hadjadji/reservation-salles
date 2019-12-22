@@ -101,7 +101,7 @@ height:	180px;
 }
 
 /*page index*/
-button {
+.reserver {
   background-color: rgba(161, 17, 12, 0.8);
   color: white;
   font-family: 'Impact';
@@ -114,7 +114,7 @@ button {
   width: 500px;
  
 }
-button:hover {
+.reserver:hover {
    background-color: rgba(161, 17, 12, 1);
 }
 header h3{
@@ -127,8 +127,9 @@ header h3 u{
 
 	color: #96390D;
 }
-section{
-	width: 100%;
+#intro{
+	display: flex;
+	flex-direction: column;
 }
 #tache1{
 	display: flex;
@@ -139,7 +140,7 @@ section{
 #picture1{
 	display: flex;
 	flex-direction: row;
-	animation: anim_postx 8s
+	animation: anim_postx 6s
 }
 @keyframes anim_postx{
 
@@ -162,7 +163,7 @@ transform: translatex(0%)
 #picture2{
 	display: flex;
 	flex-direction: row;
-	animation: anim_post 8s 
+	animation: anim_post 6s 
 }
 @keyframes anim_post{
 
@@ -221,7 +222,7 @@ transform: translatex(0%)
 
 	
 }
-#present h1, #video h1{
+#present h1, #video h1, footer h2{
 	color: white;
 	font: 40px Courier New;
 	margin: 0px;
@@ -263,5 +264,57 @@ transform: translatex(0%)
 	padding: 10px;
 
 
+}
+/*page connexion*/
+.bodyc{
+	background:url("https://www.kauppa.it/site_media/media/photologue/2013/6/10/photos/paintball.jpg")top left/100% 100%;
+}
+.form{
+  position: relative;
+  border-radius: 5px;
+  background-color: rgba(161, 17, 12, 0.58);
+  padding: 20px 0 30px 0;
+  margin-top: 50px;
+  width: 40%;
+  margin-left: 120px;
+}
+input[type=text], input[type=password]{
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; 
+}
+input[type=text], input[type=password]:hover{
+   opacity: 1;
+}
+footer{
+	background-color: rgba(0, 0, 0, 0.70);
+	color:white;
+	text-align: center;
+	margin-top: 100px;
+	padding-top: 60px;
+	display: flex;
+    flex-direction: column;
+}
+.contact {
+  background-color: rgba(18, 52, 89, 0.7);
+  color: white;
+  font-family: 'Impact';
+  font-size: 25px;
+  border-radius: 50px;
+  padding: 15px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  width: 500px;
+ 
+}
+.contact:hover {
+   background-color: rgba(18, 52, 89, 1);
 }
 
