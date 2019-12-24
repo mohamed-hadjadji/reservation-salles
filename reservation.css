@@ -1,7 +1,5 @@
-#bodi{
-	background-color: white;
-}
-#bodya{
+
+body{
 background:url("img/background-index.jpg")top left/100% 100% ;
 background-attachment:fixed;
 width: 100%;
@@ -101,22 +99,6 @@ height:	180px;
 }
 
 /*page index*/
-.reserver {
-  background-color: rgba(161, 17, 12, 0.8);
-  color: white;
-  font-family: 'Impact';
-  font-size: 25px;
-  border-radius: 25px;
-  padding: 15px;
-  margin: 70px;
-  margin-left: 700px;
-  cursor: pointer;
-  width: 500px;
- 
-}
-.reserver:hover {
-   background-color: rgba(161, 17, 12, 1);
-}
 header h3{
 
 	text-align: right;
@@ -216,17 +198,17 @@ transform: translatex(0%)
 	text-align: center;
 	border-radius: 20px;
 	width: 50%;
-	margin-left: 23%;
+	margin-left: 25%;
 	padding: 30px;
 
 	
 }
-#present h1, #video h1{
+#present h1{
 	color: white;
 	font: 40px Courier New;
 	margin: 0px;
 }
-#present h3,#video h3{
+#present h3{
 	color: #E8BF66;
 	margin-top: 3px;
 	font: 18px Courier New;	
@@ -249,24 +231,67 @@ transform: translatex(0%)
 .text u{
 	color: #E8BF66;
 }
-#video{
-	
-	text-align: center;
-	margin-top: 150px;
+
+
+
+/*reservation-form*/
+
+#reservation-formbody{
+
+	background-image: url(http://gopark.fr/wp-content/uploads/2016/02/paintball-kidz-2400x1200.jpg);
 }
-.deco{
-	background-color: rgba(161, 17, 12, 0.8);
-	border-radius: 50px;
-	width: 30%;
-	margin-left: 35%;
-	margin-bottom: 30px;
-	padding: 10px;
+
+#reservation-form-section{
+    text-align: center;
+    margin-top: 14%;
+    backdrop-filter: blur(3px);
+    background-color: #02081f66;
+
+}
+
+#h1reservation-form{
+
+	font-size: 55px;
+	color:red;
+	text-shadow: black;
+}
+.labelreservationform ::placeholder{
+	color:green;
+}
+
+.labelreservationform{
+
+	color: #ff194d;
+    font-size: 35px;
+
+}
+
+.input-reservation-form{
+
+	color:green;
+	font-size: 25px;
+}
+
+#bouton-reservation-form{
+
+	height: 10%;
+	width: 10%;
+}
+
+#selectreservation-form{
+    height: 3%;
+    width: 8%;
+    font-size: 19px;
+    color:green;
 
 
 }
-footer{
-	background-color: rgba(0, 0, 0, 0.70);
-	color:white;
-	text-align: center;
+
+table, tr, td {
+	border: 1px solid black;
 }
 
+tr, td {
+	width: 100px;
+	height: 70px;
+}
