@@ -26,7 +26,7 @@
         <a href="inscription.php"><h2>Inscription</h2></a>
       </div>
     </nav>
-    <a href="inscription.php"> <button type="button" class="reserver">REJOINT NOUS ET RESERVER MAINTENANT</button></a>
+    <a href="connexion.php"> <button type="button" class="reserver">REJOINEZ NOUS ET RESERVEZ MAINTENANT</button></a>
   </header>
 
      <?php

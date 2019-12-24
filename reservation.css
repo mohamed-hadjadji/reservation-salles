@@ -34,10 +34,11 @@ height: 170px;
 .img2{
 margin-top: -26px;
 height: 150px;
+transition: .3s ease-in-out;
 }
 .img2:hover{
 margin-top: -40px;
-height:	180px;
+transform: scale(1.5);
 }
 .nav2{
 
@@ -263,36 +264,107 @@ transform: translatex(0%)
 	margin-bottom: 30px;
 	padding: 10px;
 
-
 }
+
+
 /*page connexion*/
 .bodyc{
-	background:url("https://www.kauppa.it/site_media/media/photologue/2013/6/10/photos/paintball.jpg")top left/100% 100%;
+	background:url("img/background-con.png")top left/100% 100%;
+	background-attachment:fixed;
+	margin: 0px;
+}
+#connexion{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 100px;
 }
 .form{
   position: relative;
   border-radius: 5px;
-  background-color: rgba(161, 17, 12, 0.58);
-  padding: 20px 0 30px 0;
+  background-color: rgba(161, 17, 12, 0.7);
+  padding: 30px;
   margin-top: 50px;
   width: 40%;
   margin-left: 120px;
 }
+.login{
+	border-style:solid;
+	border-color: #F3DA74;
+	border-radius: 10px;
+	font: 25px Candara;
+    color: #F3DA74;
+	padding: 20px;
+}
+.connect{
+  color: white;
+  font: 25px Courier New;
+  text-align: center;
+
+}
+.connect h2{
+	margin-top: 0px;
+}
 input[type=text], input[type=password]{
   width: 100%;
-  padding: 12px;
+  padding: 12px 20px;
+  margin: 8px 0;
   border: none;
-  border-radius: 4px;
-  margin: 5px 0;
+  border-radius: 10px;
   opacity: 0.85;
   display: inline-block;
   font-size: 17px;
   line-height: 20px;
   text-decoration: none; 
 }
-input[type=text], input[type=password]:hover{
+input[type=text]:hover, input[type=password]:hover{
    opacity: 1;
 }
+input[type=submit] {
+    background-color: #3E5173;
+    color: #F3DA74;
+    padding: 14px 20px;
+    font-family: 'Géorgie';
+    font-size: 20px;
+    width: 300px;
+    border: none;
+    border-radius: 10px; 
+    cursor: pointer;
+    margin: 20px;
+    margin-left: 200px;
+ 
+}
+input[type=submit]:hover {
+    background-color: #D0DADB;
+    color: #5C6F63;
+    
+}
+.new{
+	font: 22px Candara;
+	color: #084E79;
+	text-align: center;
+
+}
+.inscri{
+	font: 20px Candara;
+	color: white;
+}
+.btn{
+	color:#F3DA74; 
+}
+.paint{
+	margin:60px;
+}
+
+/*Page inscription*/
+.bodyi{
+	background:url("img/background-inscr.jpg")top left / 100% 100%;
+	background-attachment: fixed;
+	margin: 0px;
+}
+
+
+/*footer*/
 footer{
 	background-color: rgba(0, 0, 0, 0.70);
 	color:white;
