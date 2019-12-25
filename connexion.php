@@ -10,7 +10,7 @@
 		<nav id="menu">
       <div class="nav1">
         <img class="img1" src="img/image1.png">
-        <img class="img2" src="https://i-love-png.com/images/paintball-png-photos.png">
+        <a href="index.php"><img class="img2" src="https://i-love-png.com/images/paintball-png-photos.png"></a>
 
       </div>
       <div class="nav2">
@@ -75,13 +75,13 @@
                 if(isset($_GET['erreur'])){
                     $err = $_GET['erreur'];
                     if($err==1 || $err==2)
-                        echo "<p style='color:red'><b>Utilisateur ou mot de passe incorrect</b></p>";
+                        echo "<p class='erreur'><b>*Utilisateur ou mot de passe incorrect*</b></p>";
                 }
 
                 if(isset($_GET['reconnect'])){
                     $con = $_GET['reconnect'];
                     if($con==1 || $con==2)
-                        echo "<p style='color:red'><b>Connecte toi avec le nouveau profil</b></p>";
+                        echo "<p class='new'><b>*Connectez-vous avec le nouveau profil*</b></p>";
                 }
                 
                 ?>

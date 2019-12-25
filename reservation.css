@@ -1,14 +1,8 @@
-#bodi{
-	background-color: white;
-}
-#bodya{
-background:url("img/background-index.jpg")top left/100% 100% ;
-background-attachment:fixed;
-width: 100%;
-margin: 0px;
-}
+
+
 /*barre nav*/
 @import 'https://fonts.googleapis.com/css?family=Raleway';
+
 
 #menu{
 	display: flex;
@@ -102,6 +96,12 @@ transform: scale(1.5);
 }
 
 /*page index*/
+.bodya{
+background:url("img/background-index.jpg")top left/100% 100% ;
+background-attachment:fixed;
+width: 100%;
+margin: 0px;
+}
 .reserver {
   background-color: rgba(161, 17, 12, 0.8);
   color: white;
@@ -119,10 +119,11 @@ transform: scale(1.5);
    background-color: rgba(161, 17, 12, 1);
 }
 header h3{
-
+    background-color: rgba(255, 255, 255, 0.7);
 	text-align: right;
-	margin-right: 20px;
+	margin-top: 0px;
 	font: 20px Consolas;
+	padding: 10px;
 }
 header h3 u{
 
@@ -276,7 +277,7 @@ transform: translatex(0%)
 #connexion{
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-around;
 	margin-top: 100px;
 }
 .form{
@@ -340,10 +341,15 @@ input[type=submit]:hover {
     
 }
 .new{
-	font: 22px Candara;
-	color: #084E79;
+	background-color: rgba(0, 0, 0, 0.65);
+	font: 26px Candara;
+	color: #F3DA74;
 	text-align: center;
 
+}
+.erreur{
+	color:red;
+	background-color: rgba(255, 255, 255, 0.7);
 }
 .inscri{
 	font: 20px Candara;
@@ -361,6 +367,144 @@ input[type=submit]:hover {
 	background:url("img/background-inscr.jpg")top left / 100% 100%;
 	background-attachment: fixed;
 	margin: 0px;
+}
+/*page profil*/
+
+.bodyp{
+	background:url("img/background-pro.jpg")top left / 100% 100%;
+	background-attachment: fixed;
+	margin: 0px;
+}
+
+/*page planning*/
+.bodyt{
+	background:url("img/background-plan.jpg")top left / 100% 100%;
+    background-attachment: fixed;
+    margin: 0px;
+}
+#choix{
+	background: rgba(10, 67, 102, 0.9);
+	border-radius: 50px;
+	width: 50%;
+	margin-left: 100px;
+	margin-bottom: 0px;
+	margin-top: 80px;
+	padding: 10px;
+	color: white;
+	font: 25px Courier New;
+	text-align: center;
+}
+
+table {
+ 
+  left: 10%;
+  margin: 25px auto;
+  overflow-y: scroll;
+  position: static;
+  width: 50%;
+  box-shadow: 10px 5px 5px gray;
+}
+
+th {
+  background: rgba(161, 17, 12, 0.6);
+  font: 25px Candara;
+  color: #F3DA74;
+  font-weight: 100;
+  letter-spacing: 3px;
+  text-align: center;
+  padding: 12px;
+  width: 33.3333%;
+  
+}
+tr {
+  background: rgba(10, 67, 102, 0.9);
+  border-bottom: 1px solid #FFF;
+  margin-bottom: 5px;
+
+}
+td {
+  font-family: 'Lato';
+  font-size: 18px;
+  color: white;
+  font-weight: 400;
+  padding: 12px;
+  text-align: center;
+  width: 33.3333%;
+}
+td a{
+	color:#F3DA74;
+}
+/*réservation-form*/
+
+#reservation-formbody{
+
+background: url("img/background-reserv.jpg")top left/100% 100%;
+background-attachment: fixed;
+margin: 0px;
+}
+
+#reservation-form-section{
+   text-align: center;
+   margin: 20px;
+   margin-top: 14%;
+   background: rgba(161, 17, 12, 0.6);
+   padding: 30px;
+   border-radius: 35px;
+
+}
+
+#h1reservation-form{
+
+	color: white;
+    font: 40px Courier New;
+    text-align: center;
+	text-shadow: black;
+}
+.labelreservationform ::placeholder{
+	color:green;
+}
+
+.labelreservationform{
+
+  font: 25px Candara;
+  color: #F3DA74;
+
+}
+
+.input-reservation-form{
+
+	color:green;
+	font-size: 25px;
+}
+
+#bouton-reservation-form{
+
+	height: 10%;
+	width: 10%;
+}
+
+#selectreservation-form{
+    height: 45px;
+    width: 270px;
+    font-size: 19px;
+    color:green;
+    border-radius: 10px;
+}
+.reserv-form input[type=text], .reserv-form input[type=datetime-local]
+{
+  width: 270px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; 
+}
+input[type=text]:hover, input[type=password]:hover{
+   opacity: 1;
 }
 
 

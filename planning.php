@@ -5,19 +5,19 @@
         <link rel="stylesheet" type="text/css" href="reservation.css">
     <title>Réservation</title>
 </head>
-<body id="bodi">
+<body class="bodyt">
     <header>
         <nav id="menu">
             <div class="nav1">
                 <img class="img1" src="img/image1.png">
-                <img class="img2" src="https://i-love-png.com/images/paintball-png-photos.png">
+                <a href="index.php"><img class="img2" src="https://i-love-png.com/images/paintball-png-photos.png"></a>
 
             </div>
             <div class="nav2">
                 <a href="index.php"><h2>Accueil</h2></a>
                 <a href="profil.php"><h2>Modification</h2></a>
                 <a href="planning.php"><h2>Planning</h2></a>
-                <a href="reservation-form.php"><h2>Reserver</h2></a>
+                <a href="reservation-form.php"><h2>Réservation</h2></a>
                 <a href="index.php?deconnexion=true"><h2>Déconnexion</h2></a>
             </div>
         </nav>
@@ -30,16 +30,20 @@ $requete = "SELECT login, titre, description, DATE_FORMAT(debut, \"%T\"), debut,
 $query = mysqli_query($connexion, $requete);
 $resultat = mysqli_fetch_all($query);
 ?>
-     <section>
+     <section id="choix">
+            <h1><b>Veuillez choisir votre créneau et réservez</b></h1>
+     </section>
+     <section id="connexion">
+        
         <table>
                 <thead>
                     <tr>
                         <th></th>
-                        <th>Lundi</th>
-                        <th>Mardi</th>
-                        <th>Mercredi</th>
-                        <th>Jeudi</th>
-                        <th>Vendredi</th>
+                        <th><b>Lundi</b></th>
+                        <th><b>Mardi</b></th>
+                        <th><b>Mercredi</b></th>
+                        <th><b>Jeudi</b></th>
+                        <th><b>Vendredi</b></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -185,7 +189,7 @@ while ( $i < 11 ) {
                                     echo "<td>Titre: ".$resultatevent[0][1]."<br />Organisateur: ".$resultatevent[0][0]."<br /><a href=\"reservation.php?idresa=".$idresa."\">Plus d'infos</a></td>";
                                 }
                                 else {
-                                    echo "<td>"."<a href=\"reservation-form.php\"><div>Disponible</div></a>"."</td>";
+                                    echo "<td>"."<a href=\"reservation-form.php\"><div>Choisir</div></a>"."</td>";
                                 }
                             unset($isokevent);
                             }
@@ -203,9 +207,21 @@ while ( $i < 11 ) {
         $i++;
 } ?>
 </tr>
-        </tbody>
-    </table>
-   </section>
+            </tbody>
+        </table>
+        <figure class="paint">
+          <img  height="650" width ="620" src="img/arena4.png">
+        </figure>
+    </section>
+    <footer>
+        <h2><b>Contact</b></h2>
+        <h3>TERRAIN PAINTBALL MARSEILLE</h3>
+        <p>15 Chemin du bois de l’Aumône - Via D4A EOURES
+          13011 Marseille</p>
+        <p>Téléphone : <b>04 69 00 16 84</b></p>
+        <a href="https://www.paintballmarseille.com/site/pdf/INVIT%20ANNIV%203.pdf"> <button type="button" class="contact">TELECHARGER VOTRE INVITATION</button></a>
+        <a href="https://www.google.fr/maps/dir/IKEA+Marseille+La+Valentine,+ZAC+la+Ravelle,+Avenue+Fran%C3%A7ois+Chardigny,+13011+Marseille/Chemin+du+Bois+de+l'Aum%C3%B4ne,+13011+Marseille/@43.2925951,5.4851795,14z/data=!4m15!4m14!1m5!1m1!1s0xd552856d05bc761:0x571bcb03362f186a!2m2!1d5.480252!2d43.293167!1m5!1m1!1s0x12c9bcf4cf807b1b:0x996fe742a9f9e5f2!2m2!1d5.5232904!2d43.2933535!3e0!5i2"> <button type="button" class="contact">Plan d'accés</button></a>
+    </footer>
 </body>
 </html>
 

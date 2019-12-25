@@ -10,7 +10,7 @@
 		<nav id="menu">
       <div class="nav1">
         <img class="img1" src="img/image1.png">
-        <img class="img2" src="https://i-love-png.com/images/paintball-png-photos.png">
+        <a href="index.php"><img class="img2" src="https://i-love-png.com/images/paintball-png-photos.png"></a>
 
       </div>
       <div class="nav2">
@@ -22,7 +22,24 @@
 	</header>
 
 
-<?php
+
+    <section id="connexion">
+        <form class="form" method="POST" action="">
+            <main class="connect">
+                <img height="120" src="https://www.freeiconspng.com/uploads/bluee-target-icon-6.png"> 
+                <h2>INSCRIPTION</h2>
+            </main>
+            <main class="login">
+        
+        
+                 <label><b>LOGIN</b></label>
+                 <input type="text" name="login" placeholder="Entrez votre Login" required><br/>
+                 <label><b>PASSWORD</b></label>
+                 <input type="password" name="mdp1" placeholder="Entrez votre mot de passe" required><br/>
+                 <label><b>CONFIRMER PASSWORD</b></label>
+                 <input type="password" name="mdp2" placeholder="Confirmez votre mot de passe" required><br/> 
+                 <input align="center" type="submit" value="VALIDER" name="connexion"><br>
+                 <?php
 
 $connexion =  mysqli_connect("localhost","root","","reservationsalles");
 if (isset($_POST['connexion']))
@@ -39,7 +56,7 @@ if (isset($_POST['connexion']))
             if ($resultat[$key][1]==$_POST['login'])
             {
                $trouve=true;
-               echo "Login deja existant!!";
+               echo "<p class='erreur'><b>Login deja existant!!</b></p>";
             }
        }
        if ($trouve==false)
@@ -52,26 +69,10 @@ if (isset($_POST['connexion']))
     }
     else
     {
-        echo "Les mots de passe doivent être identique!";
+        echo "<p class='erreur'><b>Les mots de passe doivent être identique!</b></p>";
     }
 }
 ?>
-    <section id="connexion">
-        <form class="form" method="POST" action="">
-            <main class="connect">
-                <img height="120" src="https://www.freeiconspng.com/uploads/bluee-target-icon-6.png"> 
-                <h2>INSCRIPTION</h2>
-            </main>
-            <main class="login">
-        
-        
-                 <label><b>LOGIN</b></label>
-                 <input type="text" name="login" placeholder="Entrez votre Login" required><br/>
-                 <label><b>PASSWORD</b></label>
-                 <input type="password" name="mdp1" placeholder="Entrez votre mot de passe" required><br/>
-                 <label><b>CONFIRMER PASSWORD</b></label>
-                 <input type="password" name="mdp2" placeholder="Confirmez votre mot de passe" required><br/> 
-                 <input align="center" type="submit" value="VALIDER" name="connexion">
              </main>
         
         </form>
