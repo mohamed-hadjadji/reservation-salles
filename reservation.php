@@ -1,5 +1,15 @@
 <?php
 session_start();
+ob_start();
+
+    $connexion= mysqli_connect("localhost", "root", "", "reservationsalles");
+    if ( isset($_GET["idresa"]) ) {
+    $idresa = $_GET["idresa"];
+    $requete = "SELECT titre,description,debut,fin FROM reservations WHERE id=$idresa";
+    $query = mysqli_query($connexion, $requete);
+    $resultat = mysqli_fetch_all($query, MYSQLI_ASSOC);
+    $taille = count($resultat) - 1;
+}
 ?>
 <html>
 <head>
@@ -25,23 +35,31 @@ session_start();
         </nav>
     
     </header>
-    <?php
-    $connexion= mysqli_connect("localhost", "root", "", "reservationsalles");
-    if ( isset($_GET["idresa"]) )
-     {
-     $idresa = $_GET["idresa"];
 
-    $requete = "SELECT login, titre,description,debut,fin FROM utilisateurs INNER JOIN reservations ON utilisateurs.id = reservations.id_utilisateur WHERE id=$idresa";
-    $query = mysqli_query($connexion, $requete);
-    $resultat = mysqli_fetch_all($query, MYSQLI_ASSOC);
-  
-           echo $resultat['login'];
-	echo $resultat['titre'];
-		   echo $resultat['description'];
-		   echo $resultat['debut'];
-		echo $resultat['fin'];
-	}
-		   
+ <section>
+      <?php  
+       $i = 0;
+          echo "<table border>";
+          echo "<thead><tr>";
+       foreach ($resultat[$taille] as $key => $value) 
+          {
+            echo "<th>{$key}</th>";
+        }
+        echo "</tr></thead>";
+          echo "<tbody>";
+          while ($i <= $taille) 
+          {
+            echo "<tr>";
+            foreach ($resultat[$i] as $key => $value) 
+            {
+              echo "<td>{$value}</td>";
+            }
+            echo "</tr>";
+            $i++;
+          }
+          echo "</tbody></table>";
+      ?>
+    </section>
 		
 	
 	
