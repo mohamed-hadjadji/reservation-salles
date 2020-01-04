@@ -1,4 +1,4 @@
-<?php session_start() ?>
+<?php session_start(); ?>
 <html>
 <head>
     <meta charset="utf-8">
@@ -6,24 +6,12 @@
     <title>Réservation</title>
 </head>
 <body id="reservation-formbody">
-    <header>
-        <nav id="menu">
-            <div class="nav1">
-                <img class="img1" src="img/image1.png">
-                 <a href="index.php"><img class="img2" src="https://i-love-png.com/images/paintball-png-photos.png"></a>
 
-            </div>
-            <div class="nav2">
-                <a href="index.php"><h2>Accueil</h2></a>
-                <a href="profil.php"><h2>Modification</h2></a>
-                <a href="planning.php"><h2>Planning</h2></a>
-                <a href="reservation-form.php"><h2>Réservation</h2></a>
-                <a href="index.php?deconnexion=true"><h2>Déconnexion</h2></a>
-            </div>
-        </nav>
-    
-    </header>
     <?php
+
+    include("bar-nav.php");
+    if (isset($_SESSION['login']))
+    {
        date_default_timezone_set('Europe/Paris'); 
        $connexion = mysqli_connect("localhost", "root", "", "reservationsalles");
        $requete = "SELECT * FROM utilisateurs WHERE login='".$_SESSION['login']."'";
@@ -89,6 +77,17 @@
             mysqli_close($connexion);
             ?>
      </section>
+    <?php
+   }
+   else 
+   {
+   ?>
+    <section id="notcon">
+      <p>Veuillez vous connecter pour accéder à votre page !</p>
+    </section>
+  <?php
+  }
+?>
      <footer>
         <h2><b>Contact</b></h2>
         <h3>TERRAIN PAINTBALL MARSEILLE</h3>

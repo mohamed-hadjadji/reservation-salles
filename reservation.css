@@ -118,14 +118,14 @@ margin: 0px;
 .reserver:hover {
    background-color: rgba(161, 17, 12, 1);
 }
-header h3{
+#userco h3{
     background-color: rgba(255, 255, 255, 0.7);
 	text-align: right;
 	margin-top: 0px;
 	font: 20px Consolas;
 	padding: 10px;
 }
-header h3 u{
+#userco h3 u{
 
 	color: #96390D;
 }
@@ -507,6 +507,16 @@ input[type=text]:hover, input[type=password]:hover{
    opacity: 1;
 }
 
+/*accés aux pages mode déconnexion*/
+#notcon{
+	background-color: rgba(161, 17, 12, 0.8);
+	border-radius: 20px;
+	margin: 15%;
+	padding: 2%;
+	font: 40px Candara;
+	color: #F3DA74;
+	text-align: center;
+}
 
 /*footer*/
 footer{

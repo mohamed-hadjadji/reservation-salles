@@ -6,58 +6,47 @@
 </head>
 <body class="bodyc">
 
-	<header>
-		<nav id="menu">
-      <div class="nav1">
-        <img class="img1" src="img/image1.png">
-        <a href="index.php"><img class="img2" src="https://i-love-png.com/images/paintball-png-photos.png"></a>
-
-      </div>
-      <div class="nav2">
-        <a href="index.php"><h2>Accueil</h2></a>
-        <a href="connexion.php"><h2>Connexion</h2></a>
-        <a href="inscription.php"><h2>Inscription</h2></a>
-      </div>
-    </nav>
-	</header>
 
 	<?php
+	session_start();
+	include("bar-nav.php");
+    if ( !isset($_SESSION['login']) )
+    {
+	    if(isset($_POST['login']) && isset($_POST['password']))
+        {
+   	        $connexion = mysqli_connect ("localhost", "root", "", "reservationsalles");
 
-	if(isset($_GET['login']) && isset($_GET['password']))
-   {
-   	    $connexion = mysqli_connect ("localhost", "root", "", "reservationsalles");
+   	        $login = mysqli_real_escape_string($connexion,htmlspecialchars($_POST['login']));
+            $password = mysqli_real_escape_string($connexion,htmlspecialchars($_POST['password']));
 
-   	    $login = mysqli_real_escape_string($connexion,htmlspecialchars($_GET['login']));
-        $password = mysqli_real_escape_string($connexion,htmlspecialchars($_GET['password']));
-
-        if($login !== "" && $password !== "")
-       {
-            $requete = "SELECT count(*) FROM utilisateurs where
-            login = '".$login."' ";
-            $exec_requete = mysqli_query($connexion,$requete);
-            $reponse      = mysqli_fetch_array($exec_requete);
-            $count = $reponse['count(*)'];
-
-            $requete4 = "SELECT * FROM utilisateurs WHERE login='".$login."'";
-            $exec_requete4 = mysqli_query($connexion,$requete4);
-            $reponse4 = mysqli_fetch_array($exec_requete4);
-
-            if( $count!=0 && $_SESSION['login'] !== "" && password_verify($password, $reponse4[2]) )
+            if($login !== "" && $password !== "")
             {
-            session_start();
-            $_SESSION['login'] = $_GET['login'];
-            $user = $_SESSION['login'];
-            header('Location: index.php');
+                $requete = "SELECT count(*) FROM utilisateurs where
+                login = '".$login."' ";
+                $exec_requete = mysqli_query($connexion,$requete);
+                $reponse      = mysqli_fetch_array($exec_requete);
+                $count = $reponse['count(*)'];
+
+                $requete4 = "SELECT * FROM utilisateurs WHERE login='".$login."'";
+                $exec_requete4 = mysqli_query($connexion,$requete4);
+                $reponse4 = mysqli_fetch_array($exec_requete4);
+
+                if( $count!=0 && $_SESSION['login'] !== "" && password_verify($password, $reponse4[2]) )
+                {
+            
+                $_SESSION['login'] = $_POST['login'];
+                $user = $_SESSION['login'];
+                header('Location: index.php');
+                }
+                else
+                {
+                header('Location: connexion.php?erreur=1'); // utilisateur ou mot de passe incorrect
+                }
             }
-           else
-           {
-           header('Location: connexion.php?erreur=1'); // utilisateur ou mot de passe incorrect
-           }
         }
-    }
-    ?>
-    <section id="connexion">
-        <form class="form" action="" method="GET">
+        ?>
+     <section id="connexion">
+         <form class="form" action="" method="POST">
         	<main class="connect">
                 <img height="120" src="https://www.freeiconspng.com/uploads/bluee-target-icon-6.png">
                 <h2>CONNEXION</h2>
@@ -96,6 +85,18 @@
         </figure>
          
     </section>
+    <?php
+    }
+    else 
+    {
+    ?>
+    <section id="notcon">
+      <p>Vous êtes déjà connecté !!</p>
+    </section>
+        <?php
+    }
+    ?>
+   
     <footer>
         <h2><b>Contact</b></h2>
         <h3>TERRAIN PAINTBALL MARSEILLE</h3>

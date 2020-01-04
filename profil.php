@@ -1,55 +1,27 @@
+<html>
 <head>
     <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="reservation.css">
     <title>Modifier</title>
 </head>
 <body class="bodyp">
-    <header>
-      
-       <nav id="menu">
-      <div class="nav1">
-        <img class="img1" src="img/image1.png">
-        <a href="index.php"><img class="img2" src="https://i-love-png.com/images/paintball-png-photos.png"></a>
-
-      </div>
-      <div class="nav2">
-        <a href="index.php"><h2>Accueil</h2></a>
-        <a href="profil.php"><h2>Modification</h2></a>
-        <a href="planning.php"><h2>Planning</h2></a>
-        <a href="reservation-form.php"><h2>Reservation</h2></a>
-        <a href="index.php?deconnexion=true"><h2>Déconnexion</h2></a>
-      </div>
-    </nav>
-    
-  </header>
 
   <?php
   session_start();
-$connexion = mysqli_connect("localhost","root","","reservationsalles");
+  include("bar-nav.php");
+  if (isset($_SESSION['login']))
+  {
+    $connexion = mysqli_connect("localhost","root","","reservationsalles");
 
-$requete = "SELECT * FROM utilisateurs WHERE login='".$_SESSION['login']."'";
+    $requete = "SELECT * FROM utilisateurs WHERE login='".$_SESSION['login']."'";
     $req = mysqli_query($connexion, $requete);
     $data = mysqli_fetch_assoc($req);
-
-if (isset($_GET['Modifier']))
-{
-
-
-$login = $_GET['login'];
-$passe = $_GET['mdp'];
-
-$requete2 = "UPDATE utilisateurs SET login = '$login', password = '$passe' WHERE login = '".$_SESSION['login']."'";
-$query2=mysqli_query($connexion,$requete2);
-session_unset();
-header("location:connexion.php?reconnect=1");
-}
-
-?>
-  <section id="connexion">
+  ?>
+    <section id="connexion">
         <figure class="paint">
           <img  height="600" width ="620" src="img/arena3.png">
         </figure>
-       <form class="form" method="get" action="">
+       <form class="form" method="POST" action="">
             <main class="connect">
                 <img height="120" src="https://www.freeiconspng.com/uploads/bluee-target-icon-6.png">
                 <h2>MODIFIER</h2>
@@ -69,6 +41,33 @@ header("location:connexion.php?reconnect=1");
         </form>
         
    </section>
+  <?php
+
+    if (isset($_POST['Modifier']))
+    {
+
+
+      $login = $_POST['login'];
+      $passe = password_hash($_POST["mdp"], PASSWORD_DEFAULT, array('cost' => 12));
+
+      $requete2 = "UPDATE utilisateurs SET login = '$login', password = '$passe' WHERE login = '".$_SESSION['login']."'";
+      $query2=mysqli_query($connexion,$requete2);
+      session_unset();
+      header("location:connexion.php?reconnect=1");
+    }
+  }
+  else 
+  {
+  ?>
+    <section id="notcon">
+      <p>Veuillez vous connecter pour accéder à votre page !</p>
+    </section>
+        <?php
+  }
+  
+
+?>
+ 
    <footer>
         <h2><b>Contact</b></h2>
         <h3>TERRAIN PAINTBALL MARSEILLE</h3>

@@ -9,25 +9,15 @@
 </head>
 <body class="bodya">
     <?php 
+    include("bar-nav.php");
+    ?>
+    <section id="userco">
+    <?php
     if (isset($_SESSION['login'])==false)
     {
     ?>
-  <header>
-
-    <nav id="menu">
-      <div class="nav1">
-        <img class="img1" src="img/image1.png">
-        <a href="index.php"><img class="img2" src="https://i-love-png.com/images/paintball-png-photos.png"></a>
-
-      </div>
-      <div class="nav2">
-        <a href="index.php"><h2>Accueil</h2></a>
-        <a href="connexion.php"><h2>Connexion</h2></a>
-        <a href="inscription.php"><h2>Inscription</h2></a>
-      </div>
-    </nav>
+   
     <a href="connexion.php"> <button type="button" class="reserver">REJOINEZ NOUS ET RESERVEZ MAINTENANT</button></a>
-  </header>
 
      <?php
     }
@@ -35,44 +25,16 @@
 
     {
        
-    ?>
-  <header>
-    <nav id="menu">
-      <div class="nav1">
-        <img class="img1" src="img/image1.png">
-        <a href="index.php"><img class="img2" src="https://i-love-png.com/images/paintball-png-photos.png"></a>
 
-      </div>
-      <div class="nav2">
-        <a href="index.php"><h2>Accueil</h2></a>
-        <a href="profil.php"><h2>Modification</h2></a>
-        <a href="planning.php"><h2>Planning</h2></a>
-        <a href="reservation-form.php"><h2>Réservation</h2></a>
-        <a href="index.php?deconnexion=true"><h2>Déconnexion</h2></a>
-      </div>
-    </nav>
- 
-     <?php
-                
-                if(isset($_GET['deconnexion']))
-                { 
-                   if($_GET['deconnexion']==true)
-                   {  
-                      session_unset();
-                      header("location:index.php");
-                   }
-                }
-             
-            ?>
-<?php
-$user = $_SESSION['login'];
+            $user = $_SESSION['login'];
             echo "<h3><b>Bonjour <u>$user,</u> vous êtes connecté vous pouvez réserver maintenant.</b></h3>"; 
- ?>
-<a href="planning.php"> <button type="button" class="reserver">RESERVER MAINTENANT</button></a>
-</header>
-<?php
-}
-?>
+    ?>
+     <a href="planning.php"> <button type="button" class="reserver">RESERVER MAINTENANT</button></a>
+
+    <?php
+    }
+    ?>
+  </section>
   <section id="defilie">
     <article id="tache1">
       <figure>

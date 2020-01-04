@@ -6,23 +6,13 @@
 </head>
 <body class="bodyi">
 
-	<header>
-		<nav id="menu">
-      <div class="nav1">
-        <img class="img1" src="img/image1.png">
-        <a href="index.php"><img class="img2" src="https://i-love-png.com/images/paintball-png-photos.png"></a>
-
-      </div>
-      <div class="nav2">
-        <a href="index.php"><h2>Accueil</h2></a>
-        <a href="connexion.php"><h2>Connexion</h2></a>
-        <a href="inscription.php"><h2>Inscription</h2></a>
-      </div>
-    </nav>
-	</header>
-
-
-
+	<?php
+    session_start();
+     include("bar-nav.php");
+     $connexion =  mysqli_connect("localhost","root","","reservationsalles");
+     if ( !isset($_SESSION['login']) )
+    {
+    ?>
     <section id="connexion">
         <form class="form" method="POST" action="">
             <main class="connect">
@@ -41,45 +31,58 @@
                  <input align="center" type="submit" value="VALIDER" name="connexion"><br>
                  <?php
 
-$connexion =  mysqli_connect("localhost","root","","reservationsalles");
-if (isset($_POST['connexion']))
-{
-	 $mdp= password_hash($_POST["mdp1"], PASSWORD_DEFAULT, array('cost' => 12));
-	if ($_POST['mdp1']==$_POST['mdp2'])
-    {
-    $requet="SELECT* FROM utilisateurs";
-    $query2=mysqli_query($connexion,$requet);
-    $resultat=mysqli_fetch_all($query2);
-    $trouve=false;
-       foreach ($resultat as $key => $value) 
+
+        if (isset($_POST['connexion']))
        {
+            $login = $_POST['login'];
+	        $mdp= password_hash($_POST["mdp1"], PASSWORD_DEFAULT, array('cost' => 12));
+	        if ($_POST['mdp1']==$_POST['mdp2'])
+            {
+            $requet="SELECT* FROM utilisateurs WHERE login='".$login."'";
+            $query2=mysqli_query($connexion,$requet);
+            $resultat=mysqli_fetch_all($query2);
+            $trouve=false;
+            foreach ($resultat as $key => $value) 
+            {
             if ($resultat[$key][1]==$_POST['login'])
             {
                $trouve=true;
-               echo "<p class='erreur'><b>Login deja existant!!</b></p>";
+               echo "<p class='erreur'><b>Login déja existant!!</b></p>";
             }
-       }
-       if ($trouve==false)
-        {
+           }
+           if ($trouve==false)
+           {
             $sql = "INSERT INTO utilisateurs (login,password)
-                VALUES ('".$_POST['login']."','".$mdp."')";
+                VALUES ('".$login."','".$mdp."')";
             $query=mysqli_query($connexion,$sql);
             header('location:connexion.php');
+            }
+           }
+           else
+           {
+              echo "<p class='erreur'><b>Les mots de passe doivent être identique!</b></p>";
+           }
         }
-    }
-    else
-    {
-        echo "<p class='erreur'><b>Les mots de passe doivent être identique!</b></p>";
-    }
-}
-?>
-             </main>
+
+    ?>
+            </main>
         
         </form>
         <figure class="paint">
         	<img  height="640" width ="650" src="img/arena2.png">
         </figure>
     </section>
+    <?php
+    }
+    else 
+    {
+    ?>
+    <section id="notcon">
+      <p>Vous êtes déjà connecté impossible de s'inscrire !!</p>
+    </section>
+        <?php
+    }
+    ?>
     <footer>
         <h2><b>Contact</b></h2>
         <h3>TERRAIN PAINTBALL MARSEILLE</h3>
